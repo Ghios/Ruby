@@ -1,0 +1,138 @@
+=begin 
+p "Enter your first name"
+first_name = gets.chomp
+p "Enter your last name"
+last_name = gets.chomp
+full_name = first_name + " " + last_name
+p "Your full name is #{full_name}"
+p "Your full name is #{last_name} #{last_name}"
+p "Your full name reversed is #{full_name.reverse}"
+p "Your name has #{full_name.length-1} characters in it" 
+=end
+
+=begin
+def multiply(first_number, second_number)
+    first_number.to_f * second_number.to_f      
+end
+   
+def divide(first_number, second_number)
+    first_number.to_f / second_number.to_f      
+end
+   
+def subtract(first_number, second_number)
+    second_number.to_f - first_number.to_f      
+end
+   
+def mod(first_number, second_number)
+    first_number.to_f % second_number.to_f      
+end
+
+def add(first_number, second_number)
+    first_number.to_f + second_number.to_f
+end
+
+puts "Simple calculator"
+20.times { print "-" }
+
+puts "Please enter your first number"
+first_number = gets.to_f
+puts "Please enter your second number"
+second_number = gets.to_f
+puts "Choose: \n 1 - multiplie \n 2 - divide \n 3 - subtract\n 4 - add \n 5 - mod"
+mode = gets.to_f
+
+
+case mode
+when 1 
+    puts "The first number multiplied by the second number is: #{multiply(first_number, second_number)}"
+when 2 
+    puts "The first number divided by the second number is: #{divide(first_number, second_number)}"
+when 3
+    puts "The first number subtracted from the second number is: #{subtract(first_number, second_number)}"
+when 4 
+    puts "The first number added to the second number is: #{add(first_number,second_number)}"
+when 5
+    puts "The first number mod the second number is: #{mod(first_number, second_number)}"
+end
+=end 
+
+# HOMEWORK Authentificator
+=begin 
+users = [
+    { username: "mashrur", password: "password1"},
+    { username: "jack", password: "password2" },
+    { username: "arya", password: "password3" },
+    { username: "jonshow", password: "password4" },
+    { username: "heisenberg", password: "password5" }
+  ]
+
+# authentication method to check and verify if username/password combination exists
+def auth_user(username, password, list_of_users)
+    list_of_users.each do |user_record|
+    if user_record[:username] == username && user_record[:password] == password
+        return user_record
+    end
+    end
+    "Credentials were not correct"
+end
+
+# program execution flow
+puts "Welcome to the authenticator"
+25.times { print "-" }
+puts
+puts "This program will take input from the user and compare password"
+puts "If password is correct, you will get back the user object"
+
+attempts = 1
+while attempts < 4
+    print "Username: "
+    username = gets.chomp
+    print "Password: "
+    password = gets.chomp
+    authentication = auth_user(username, password, users)
+    puts authentication
+    puts "Press n to quit or any other key to continue: "
+    input = gets.chomp.downcase
+    break if input == "n"
+    attempts += 1
+end
+
+puts "You have exceeded the number of attempts" if attempts == 4
+
+=end
+
+dial_book = {
+    "newyork" => "212",
+    "newbrunswick" => "732",
+    "edison" => "908",
+    "plainsboro" => "609",
+    "sanfrancisco" => "301",
+    "miami" => "305",
+    "paloalto" => "650",
+    "evanston" => "847",
+    "orlando" => "407",
+    "lancaster" => "717"
+  }
+   
+  def get_city_names(somehash)
+    somehash.keys
+  end
+   
+  def get_area_code(somehash, key)
+    somehash[key]
+  end
+   
+  loop do
+    puts "Do you want to lookup an area code based on a city name?(Y/N)"
+    answer = gets.chomp.downcase
+    break if answer != "y"
+    puts "Which city do you want the area code for?"
+    puts get_city_names(dial_book)
+    puts "Enter your selection"
+    prompt = gets.chomp
+    if dial_book.include?(prompt)
+      puts "The area code for #{prompt} is #{get_area_code(dial_book, prompt)}"
+    else
+      puts "You entered a city name not in the dictionary"
+    end
+  end
