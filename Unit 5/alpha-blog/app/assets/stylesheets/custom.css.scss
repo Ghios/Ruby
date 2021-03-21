@@ -1,0 +1,101 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link:hover {
+  background-color: transparent !important;
+}
+
+.nav-link{
+  color: white  !important;
+}
+
+#logo{
+  color: white ;
+}
+
+.navbar-brand:hover {
+  background-color: transparent !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+  
+#home-container {
+  margin-top: 25px;
+}
+  
+.jumbotron {
+  background-image: asset-url('jumbo-copy.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+
+html,body {
+  height: 100%;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+#home-body{
+  height: 100%;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+}
+  
+#page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+  
+#sticky-footer {
+  flex-shrink: none;
+} 
+
+#home-container{
+  margin-top: 25px; 
+}
+
+.jumbotron{
+  background-image: asset-url('homepage-jumbo.jfif');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+#error_explanation{
+  width: auto !important;
+}
+  
+.field_with_errors{
+  background-color: transparent !important;
+  display: flex !important;
+}
+
+.form-group{
+  display: flex;
+  justify-content: space-between;
+}

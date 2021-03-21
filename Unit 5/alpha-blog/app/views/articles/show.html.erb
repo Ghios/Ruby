@@ -1,19 +1,47 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tile:</strong>
-  <%= @article.tile %>
-</p>
+ <div>
+ <div>
+        <% if notice.present?%>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <p id="notice"><%= notice %></p>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            <% @article.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+        </div>
+        <% end %>
+        <%end%>
+  </div>   
 
-<p>
-  <strong>Description:</strong>
-  <%= @article.description %>
-</p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  <h2 class="text-center mt-4"><%= @article.tile%></h2>
+  <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-8 mt-4">
+          <div class="card text-center shadow mb-5 bg-white rounded">
+            <div class="card-header font-italic">
+              Liubomyr Ghios
+            </div>
+            <div class="card-body">
+              <div class="card-text text-left">
+                <p><%= simple_format(@article.description)  %></p>
+                <p class="card-text text-left"> <%= simple_format(@article.text) %></p>
+              </div>
+              <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %>
+              <%= link_to "Delete", @article , method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+            </div>
+            <div class="card-footer text-muted">
+              <small>Created at
+              <%= @article.created_at %>
+              Updated at
+              <%= @article.updated_at %>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
