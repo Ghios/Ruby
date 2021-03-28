@@ -16,7 +16,11 @@ class Student
     "First name: #{@first_name}, Password: #{@password}, Last name: #{@last_name}, Username: #{@username},
                   email address: #{@email}"
   end
- 
+  
+  def fuk 
+    puts "dd"
+  end
+  
 end
  
 mashrur = Student.new("Mashrur", "Hossain", "mashrur1", "mashrur@example.com",

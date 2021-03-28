@@ -57,7 +57,7 @@ end
 =end 
 
 # HOMEWORK Authentificator
-=begin 
+#=begin 
 users = [
     { username: "mashrur", password: "password1"},
     { username: "jack", password: "password2" },
@@ -99,7 +99,7 @@ end
 
 puts "You have exceeded the number of attempts" if attempts == 4
 
-=end
+#=end
 
 dial_book = {
     "newyork" => "212",
