@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
     belongs_to :user
-    validates :tile, presence: true, length: { minimum: 6, maximum: 100}
+    has_many :article_categories
+    has_many :categories, through: :article_categories
     validates :description, presence: true
 end
